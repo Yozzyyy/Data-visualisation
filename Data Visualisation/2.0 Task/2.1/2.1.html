@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Data Visualisation Exercerise 1">
+    <meta name="Keyword" content="HTML,CSS and Javascript">
+    <meta name="author" content="Bryan Yap">
+
+    <title>Task 2.1</title><title>Task 2.1 D3 Data Binding</title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+<body>
+
+   <h1>The D3 Journey starts here...</h1>
+
+   <script>
+
+    var dataset = [14, 5, 26, 23, 9];
+
+    d3.select("body").selectAll("p")
+        .data(dataset)
+        .enter()
+        .append("p")
+        .style("color",function(d){
+            if (d>10){
+                return "red"
+            }
+        })
+        .text (function(d)
+        {
+            if (d>10){
+                return "WARNING: Joe watched " + d + "cat videos today.";
+            }
+            else
+            {
+                return "Joe watched " + d + "cat videos today.";
+            }
+    });
+
+        console.log(d3.selectAll("p"));
+        
+   </script>
+
+
+    <footer style="color: gray;">
+        COS30045 Data Visualisation 
+        <br>
+        Bryan Yap Tze Jien (105285213)
+    </footer>
+</body>
+</html>

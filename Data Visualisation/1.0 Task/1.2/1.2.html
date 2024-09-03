@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Data Visualisation Exercerise 1">
+    <meta name="Keyword" content="HTML,CSS and Javascript">
+    <meta name="author" content="Bryan Yap">
+    <title>Task 1.2</title>
+</head>
+<body>
+    <h1>Pets and the Pandemic</h1>
+    <h2>Author of an interesting topic</h2>
+
+    <P>A report from Animal Medicines Australia (AMA)
+        has found that many Australians took the opportunity
+        to introduce a pet into their household during the
+        pandemic. Their survey indicated that there was a 
+        significant increase in the percent of households 
+        taking in a new dog, fish or bird. Their research 
+        also indicated that pets had a number of positive
+    </P>
+
+   <ul>
+    <li>companionship</li>
+    <li>better mental health</li>
+    <li>joy and happiness.</li>
+   </ul>
+
+   <br>
+   <button class="button1" onclick="show('pet2019.png','Fig 1. Percent of most popular pet owned by Australians in 2019','int2019')">2019</button>
+   <button class="button1" onclick="show('pets2021.png','Fig 2. Percent of most popular pet owned by Australians in 2021','int2021')">2021</button>
+   <button class="button1" onclick="show('bothyear.png','Fig 3. Percent of most popular pet owned by Australians in 2019 and 2021','int20192021')">2019&2021</button>
+
+   <figure>
+    <img id="ChartImg" style="width: 50%;" style="display: none;">
+    <figcaption id="ChartCap"></figcaption>
+   </figure>
+
+   <script>
+        function show(Image,ImgDesc,ImgAlt){
+            document.getElementById('ChartImg').src=Image
+            document.getElementById('ChartImg').alt=ImgDesc
+            document.getElementById('ChartCap').innerHTML=ImgDesc
+            document.getElementById('ChartImg').style.
+            display='block';
+        }
+
+
+
+   </script>
+
+    <p>With the increase in pet ownership the AMA are encouraging 
+        policy makers to consider the needs of companion animals 
+        and their owners when considering rental, strata and body 
+        corporate regulations are well as accepting animals in public
+         places and transport.
+    </p>
+
+    
+   
+
+    <br>
+    <br>
+
+    <footer>
+        COS30045 Data Visualisation 
+        <br>
+        Bryan Yap Tze Jien (105285213)
+    </footer>
+
+
+
+
+
+
+<style>
+ /* General Styling */
+ body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        h1 {
+            color: #1abc9c;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        /* Paragraph Styling */
+        p {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Button Styling */
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center the buttons horizontally */
+            align-items: center;     /* Center the buttons vertically */
+            height: 100vh;
+            margin-left: 200px;        /* Full viewport height to center vertically */
+        }
+
+        .button1 {
+            background-color: #3498db;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button1:hover {
+            background-color: #2980b9;
+        }
+
+        /* Figure and Image Styling */
+        figure {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        
+        figure img {
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Image hidden initially */
+        }
+
+        /* Figcaption Styling */
+        figcaption {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1abc9c;
+            color: #fff;
+            font-size: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</body>
+</html>
