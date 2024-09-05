@@ -11,72 +11,13 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     
 <body>
-    <h1>The D3 Journey Starts here...</h1>
-    <script>
-    function init(){
-        d3.csv("task2_4.csv").then(function(data){
-            console.log(data);
-            wombatSightings = data;
-            
-            barChart(wombatSightings)
     
-        })
-    
-        var w = 500;
-        var h = 150;
-        var barPadding = 3;
-    
-        var svg = d3.select("#chart")
-                    .append("svg")
-                    .attr("width",w)
-                    .attr("height",h);
-    
-        function barChart(wombatSightings){
-            
-            svg.selectAll("rect")
-                .data(wombatSightings)
-                .enter()
-                .append("rect")
-    
-                .attr("x",function(d,i){
-                    return i * (w/wombatSightings.length);
-                })
-                .attr("y",function(d){
-                    return h - (d.wombats*4);
-    
-                })
-                .attr("width",function(d){
-                    return (w/wombatSightings.length-barPadding);
-                })
-                .attr("height",function(d){
-                    return (d.wombats*4);
-    
-                })
-                .attr("fill",function(d){
-                    return "rgb(135,206, " + (d.wombats * 8) + ")";
-                })
-            
-    
-            svg.selectAll("text")
-            .data(wombatSightings)
-            .enter()
-            .append("text")
-            .text(function(d){
-                return d.wombats;
-            })
-            .attr("fill","black")
-            .attr("x",function(d,i){
-                return i * (w/wombatSightings.length) + 10.5;
-            })
-            .attr("y",function(d){
-                return h - (d.wombats*4)
-            })
-        }
-    
-    }
-    window.onload =init;
-    </script>
-    
+	<h1>Drawing with Data</h1>
+ 
+
+    <p id="chart"></p>
+    <script src="2.4.js"></script>
+
 
     <footer style="color: gray;">
         COS30045 Data Visualisation 
