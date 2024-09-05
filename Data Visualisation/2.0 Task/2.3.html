@@ -10,6 +10,15 @@
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
 <body>
+    <div class="lab-container">
+        <div class="lab">
+            <h3>Navigation Bar</h3>
+            <button><a href="../MainPage.html">Homepage</a></button>
+            <button><a href="2.1.html">2.1</a></button>
+            <button><a href="2.2.html">2.2</a></button>
+            <button><a href="2.4.html">2.4</a></button>
+        </div>
+    </div>
 
     <h1>The D3 Journey Starts here...</h1>
     <script>
@@ -104,9 +113,40 @@
             position: relative;
             bottom: 0;
             width: 100%;
-            margin-top: 40px;
+            margin-top: 200px;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
+        .lab-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    }
+
+
+.lab h3 {
+    color: #1abc9c;
+    margin-bottom: 15px;
+        }
+
+.lab button {
+    background-color: #1abc9c;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    font-size: 1em;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+        }
+
+.lab button:hover {
+     background-color: #16a085;
+        }
+a {
+    color: white;
+    text-decoration: none;
+    }
     </style>
     <br>
     <br>

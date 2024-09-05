@@ -2,21 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Data Visualisation Exercerise 1">
-    <meta name="Keyword" content="HTML,CSS and Javascript">
+    <meta name="description" content="Data Visualisation Exercise Mainpage">
+    <meta name="Keyword" content="HTML,CSS,Javascript">
     <meta name="author" content="Bryan Yap">
     <title>Mainpage</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1abc9c;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .lab-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .lab {
+            background-color: #3498db;
+            padding: 20px;
+            border-radius: 8px;
+            width: 150px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .lab h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .lab button {
+            background-color: #1abc9c;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px 0;
+            font-size: 1em;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .lab button:hover {
+            background-color: #16a085;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1abc9c;
+            color: white;
+            font-size: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 500px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>MainPage for all labs</h1>
-    <h2>Author by Bryan Yap</h2>
+    <h1>MainPage for All Labs</h1>
+    <h2>Author: Bryan Yap</h2>
 
-    <p>sim is so gay meiun</p>
+    <!-- Lab 1 -->
+    <div class="lab-container">
+        <div class="lab">
+            <h3>Lab 1</h3>
+            <button><a href="1.0 Task/1.1.html">1.1</a></button>
+            <button><a href="1.0 Task/1.2.html">1.2</a></button>
+            <button><a href="1.0 Task/1.3.html">1.3</a></button>
+        </div>
 
-    <footer>
-        COS30045 Data Visualisation 
-        <br>
+        <!-- Lab 2 -->
+        <div class="lab">
+            <h3>Lab 2</h3>
+            <button><a href="2.0 Task/2.1.html">2.1</a></button>
+            <button><a href="2.0 Task/2.2.html">2.2</a></button>
+            <button><a href="2.0 Task/2.3.html">2.3</a></button>
+            <button><a href="2.0 Task/2.4.html">2.4</a></button>
+        </div>
+    </div>
+
+    <footer >
+        COS30045 Data Visualisation<br>
         Bryan Yap Tze Jien (105285213)
     </footer>
 </body>
-</html> 
+</html>
