@@ -12,7 +12,7 @@
     <h2>Author by Bryan Yap</h2>
 
     <!-- SVG canvas with background color -->
-    <svg width="500" height="60" style="background-color: slategrey;">
+    <svg width="500" height="60" style="background-color: slategrey;" id="circle">
         <!-- Group tag, applies styling, transformations, etc., to all shapes in the group -->
         <g transform="translate(20, 0)">
             <!-- Circle -->
@@ -36,7 +36,7 @@
         <p>Pet ownership in 2019</p>
 
     <!-- Original bar chart -->
-    <svg width="500" height="300" style="background-color: slategray;">
+    <svg width="500" height="300" style="background-color: slategray;" id="descending">
         <!-- Grouping all the rectangles together -->
         <g fill="cornflowerblue">
             <!-- First Rectangle -->
@@ -63,7 +63,7 @@
     <p>Pet ownership reversed from low to high</p>
 
     <!-- Duplicated and reversed bar chart -->
-    <svg width="500" height="300" style="background-color: slategray;">
+    <svg width="500" height="300" style="background-color: slategray;" id="ascending">
         <!-- Grouping all the rectangles together, reverse order -->
         <g fill="cornflowerblue">
             <!-- First Rectangle (now the smallest) -->
@@ -84,11 +84,56 @@
             <rect x="245" y="100" width="40" height="100"></rect>
         </g>
     </svg>
+    <style>
+    body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #cfd7dc;
+    color: #2c3e50;
+    margin: 0;
+    padding: 20px;
+    }
+
+    h1 {
+    color: #1abc9c;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    }
+
+    h2 {
+    color: #34495e;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    }
+
+    footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1abc9c;
+    color: #fff;
+    font-size: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    svg {
+    display: block;
+    margin: auto; /* Center SVGs horizontally */
+    }
+    p{
+        text-align: center;
+    }
+
+    </style>
 
     <br><br>
 
     <!-- Footer section -->
-    <footer style="color:grey;">
+    <footer style="color:rgb(11, 11, 11);">
         COS30045 Data Visualisation<br>
         Bryan Yap (j22037939/)
     </footer>

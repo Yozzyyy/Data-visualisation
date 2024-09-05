@@ -40,9 +40,54 @@
         console.log(d3.selectAll("p"));
         
    </script>
+   <style>
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        background-color: #cfd7dc;
+        color: #2c3e50;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #1abc9c;
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.2em;
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #ecf0f1;
+        border-left: 5px solid #1abc9c;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style for warning paragraphs (text where d > 10) */
+    p[style="color: red;"] {
+        background-color: #fce4e4;
+        border-color: #e74c3c;
+    }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #1abc9c;
+        color: #fff;
+        font-size: 1em;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
 
 
-    <footer style="color: gray;">
+    <footer style="color:rgb(11, 11, 11);">
         COS30045 Data Visualisation 
         <br>
         Bryan Yap Tze Jien (105285213)
