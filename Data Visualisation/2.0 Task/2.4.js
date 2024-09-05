@@ -38,7 +38,7 @@ function init(){
 
             })
             .attr("fill",function(d){
-                return "rgb(135,206, " + (d.wombats * 8) + ")";
+                return "rgb(144,238, " + (d.wombats * 8) + ")"
             })
         
 
@@ -51,11 +51,13 @@ function init(){
         })
         .attr("fill","black")
         .attr("x",function(d,i){
-            return i * (w/wombatSightings.length) + 10.5;
+            return i * (w / wombatSightings.length) + (w / wombatSightings.length) / 2;
         })
         .attr("y",function(d){
-            return h - (d.wombats*4)
+            return h - (d.wombats*4)+15;
         })
+        .attr("text-anchor", "middle")  
+    
     }
 
 }
