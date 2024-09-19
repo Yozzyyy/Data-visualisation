@@ -32,6 +32,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap; /* Allows flexibility for more labs */
             margin-bottom: 20px;
         }
 
@@ -70,12 +71,11 @@
             background-color: #1abc9c;
             color: white;
             font-size: 1em;
-            position: relative;
-            bottom: 0;
             width: 100%;
-            margin-top: 500px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            
         }
 
         a {
@@ -85,7 +85,7 @@
     </style>
 </head>
 <body>
-    <h1>MainPage for All Labs</h1>
+    <h1>Main Page for All Labs</h1>
     <h2>Author: Bryan Yap</h2>
 
     <!-- Lab 1 -->
@@ -105,9 +105,22 @@
             <button><a href="2.0 Task/2.3.html">2.3</a></button>
             <button><a href="2.0 Task/2.4.html">2.4</a></button>
         </div>
+
+        <!-- Lab 3 -->
+        <div class="lab">
+            <h3>Lab 3</h3>
+            <button><a href="3.0 Task/3.1.html">3.1</a></button>
+            <button><a href="3.0 Task/3.2.html">3.2</a></button>
+        </div>
+
+        <!-- Lab 4 -->
+        <div class="lab">
+            <h3>Lab 4</h3>
+            <button><a href="4.0 Task/COS30045 4.1 Design Studio.pdf">4.1</a></button>
+        </div>
     </div>
 
-    <footer >
+    <footer>
         COS30045 Data Visualisation<br>
         Bryan Yap Tze Jien (105285213)
     </footer>
