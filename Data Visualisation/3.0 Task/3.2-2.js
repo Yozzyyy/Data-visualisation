@@ -43,36 +43,36 @@ var yAxis = d3.axisLeft()
     .ticks(8);  // Specifies 8 tick marks for better spacing
 
 // Creates circles for each data point
-svg.selectAll("circle")  // Selects all existing circle elements (if any)
-    .data(dataset)  // Binds the dataset to the selection
-    .enter()  // Creates placeholders for each data point
-    .append("circle")  // Appends a circle element for each data point
+svg.selectAll("circle")  
+    .data(dataset)  
+    .enter()  
+    .append("circle") 
     .attr("cx", function(d) { return xScale(d[0]); })  // Sets the x-coordinate of the circle based on the x-value (d[0])
     .attr("cy", function(d) { return yScale(d[1]); })  // Sets the y-coordinate of the circle based on the y-value (d[1])
-    .attr("r", 6)  // Sets a fixed radius for all circles
-    .attr("fill", "rgb(49, 145, 0)");  // Sets the color of the circle
+    .attr("r", 6)  
+    .attr("fill", "rgb(49, 145, 0)");  
 
-// Adds text labels next to each data point
-svg.selectAll("text")  // Selects all existing text elements (if any)
-    .data(dataset)  // Binds the dataset to the selection
-    .enter()  // Creates placeholders for each data point
-    .append("text")  // Appends a text element for each data point
-    .text(function(d) { return d[0] + "," + d[1]; })  // Sets the text content to the x and y values
-    .attr("x", function(d) { return xScale(d[0]) + 10; })  // Positions the text slightly to the right of the circle (x + 10)
-    .attr("y", function(d) { return yScale(d[1]) - 1; })  // Positions the text slightly above the circle (y - 1)
-    .attr("fill", "green");  // Sets the text color to green
+// Adds text labels beside each plot data
+svg.selectAll("text")  
+    .data(dataset)  
+    .enter()  
+    .append("text")  
+    .text(function(d) { return d[0] + "," + d[1]; })  
+    .attr("x", function(d) { return xScale(d[0]) + 10; })  
+    .attr("y", function(d) { return yScale(d[1]) - 1; })  
+    .attr("fill", "green");  
 
 // Appends the x-axis to the SVG at the bottom (height - padding)
-svg.append("g")  // Adds a group element (g) to hold the x-axis
-    .attr("class", "x axis")  // Assigns a class to the axis for styling purposes
+svg.append("g")  // use (g) to add value
+    .attr("class", "x axis")  
     .attr("transform", "translate(0, " + (h - padding) + ")")  // Moves the x-axis to the bottom of the canvas
-    .call(xAxis);  // Draws the x-axis using the defined xScale
+    .call(xAxis);  // Draws the x-axis using the  xScale
 
 // Appends the y-axis to the SVG on the left (at padding position)
-svg.append("g")  // Adds a group element (g) to hold the y-axis
-    .attr("class", "y axis")  // Assigns a class to the axis for styling purposes
+svg.append("g")  
+    .attr("class", "y axis")  
     .attr("transform", "translate(" + padding + ", 0)")  // Moves the y-axis to the left side of the canvas
-    .call(yAxis);  // Draws the y-axis using the defined yScale
+    .call(yAxis);  // Draws the y-axis using the yScale
 
 // Adding labels for the axes
 // x-axis label
@@ -80,9 +80,9 @@ svg.append("text")  // Adds a text element
     .attr("text-anchor", "middle")  // Centers the text
     .attr("x", w / 2)  // Positions it in the middle of the width
     .attr("y", h - 10)  // Positions it slightly below the x-axis
-    .text("Tree Age(years)")  // Sets the label text
-    .attr("font-size", "12px")  // Sets font size
-    .attr("fill", "black");  // Sets text color
+    .text("Tree Age(years)")  
+    .attr("font-size", "12px") 
+    .attr("fill", "black"); 
 
 // y-axis label
 svg.append("text")  // Adds a text element
@@ -90,6 +90,6 @@ svg.append("text")  // Adds a text element
     .attr("transform", "rotate(-90)")  // Rotates the text to be vertical
     .attr("x", -h / 2)  // Moves the label to the center of the y-axis
     .attr("y", 15)  // Positions it slightly to the left of the y-axis
-    .text("Tree Height(m)")  // Sets the label text
-    .attr("font-size", "12px")  // Sets font size
-    .attr("fill", "black");  // Sets text color
+    .text("Tree Height(m)")  
+    .attr("font-size", "12px")  
+    .attr("fill", "black");  
