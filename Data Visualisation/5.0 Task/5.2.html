@@ -22,6 +22,8 @@
     </div>
 
     <button id="updateButton">Update Once</button>
+    <button id="easeboucing">Transition 1</button>
+    <button id="easelastic">Transition 2</button>
 
     <h1>The D3 Journey Starts here...</h1>
 
@@ -31,6 +33,7 @@
         var barPadding = 3;
 
         var dataset = [12, 10, 29, 19, 8, 15, 20, 12, 9, 6, 21, 28]; // Initial dataset
+        var easeType = d3.easeBounce;  // Correctly initialized
 
         var svg = d3.select("body")
                     .append("svg")
@@ -58,6 +61,13 @@
                 .attr("x", function(d, i) {
                     return xscale(i);
                 })
+                .attr("y", h)  // Start from the bottom (initial position)
+                .attr("width", xscale.bandwidth())
+                .attr("height", 0) // Start with height 0
+                .attr("fill", "rgb(106,90,205)")
+                .transition()  // Now apply the transition
+                .duration(2000)
+                .ease(easeType)  // Apply easing AFTER the transition call
                 .attr("y", function(d) {
                     return yscale(d);
                 })
@@ -80,6 +90,10 @@
                 .attr("x", function(d, i) {
                     return xscale(i) + xscale.bandwidth() / 2;
                 })
+                .attr("y", h)
+                .transition()
+                .duration(2000)
+                .ease(easeType)  // Apply easing AFTER the transition call
                 .attr("y", function(d) {
                     return yscale(d) + 15;
                 })
@@ -97,16 +111,25 @@
         // Button click event
         d3.select("#updateButton").on("click", function() {
             // First, show an alert to test the button
-            alert("Hey, the button works!");
+        
 
             // Now, update the dataset with new random values
             dataset = dataset.map(function() {
                 return Math.floor(Math.random() * 30); // New random values
             });
-
-            // redraw if updated
             drawBars(dataset);
         });
+
+        d3.select("#easeboucing").on("click", function(){
+            easeType = d3.easeBounce;
+            drawBars(dataset);
+        });
+
+        d3.select("#easelastic").on("click", function(){
+            easeType = d3.easeElastic;
+            drawBars(dataset);
+        });
+
     </script>
 
     <style>
