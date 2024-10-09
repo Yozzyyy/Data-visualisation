@@ -1,4 +1,3 @@
-
 var w = 500;
 var h = 100;
 var barPadding = 3;
@@ -45,8 +44,13 @@ function drawBars(data) {
         .attr("width", xscale.bandwidth())
         .attr("height", function(d) {
             return h - yscale(d);
-        })
-        .attr("fill", "rgb(106,90,205)");
+        });
+
+    bars.exit()
+        .transition()
+        .duration(2000)
+        .attr("x", w)  // Move the exiting bars out of the view
+        .remove();  // removing the bar
 
     // Add text to bars
     var labels = svg.selectAll("text")
@@ -68,36 +72,31 @@ function drawBars(data) {
         .attr("y", function(d) {
             return yscale(d) + 15;
         })
-        .attr("fill", "black")
-        .attr("text-anchor", "middle");
+        .attr("fill", "black") //black text
+        .attr("text-anchor", "middle"); //middle text
 
-    // remove all the bars and labels before updating
-    bars.exit().remove();
-    labels.exit().remove();
+    labels.exit().remove();  // Remove old labels
 }
 
 // Draw the initial chart
 drawBars(dataset);
 
-// Button click event
+// Update button functionality
 d3.select("#updateButton").on("click", function() {
-    // First, show an alert to test the button
-
-
-    // Now, update the dataset with new random values
     dataset = dataset.map(function() {
-        return Math.floor(Math.random() * 30); // New random values
+        return Math.floor(Math.random() * 30);  // set a random number
     });
-    drawBars(dataset);
+    drawBars(dataset);  // Redraw chart with updated data
 });
 
-d3.select("#easeboucing").on("click", function(){
-    easeType = d3.easeBounce;
-    drawBars(dataset);
+// Add button functionality
+d3.select("#Adding").on("click", function() {
+    dataset.push(Math.floor(Math.random() * 30));  // Add a new random value
+    drawBars(dataset);  // Redraw chart with new data
 });
 
-d3.select("#easelastic").on("click", function(){
-    easeType = d3.easeElastic;
-    drawBars(dataset);
+// Remove button functionality
+d3.select("#Removing").on("click", function() {
+    dataset.shift();  // Remove the first value from the dataset
+    drawBars(dataset);  // Redraw chart with updated data
 });
-
