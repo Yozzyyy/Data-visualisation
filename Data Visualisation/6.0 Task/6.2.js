@@ -47,7 +47,7 @@ function drawBars(data) {
                 .attr("fill", "orange");
 
             var xPosition = parseFloat(d3.select(this).attr("x")) + xscale.bandwidth() / 2;//x and y position of the text 
-            var yPosition = yscale(d) - 5; // Position above the bar 
+            var yPosition = yscale(d) + 10; //position
 
             // Remove any existing tooltip
             d3.select("#tooltip").remove();
@@ -107,8 +107,28 @@ function drawBars(data) {
         .attr("text-anchor", "middle"); // Center text
          // Add the text value to each bar
 
-    labels.exit().remove();  // Remove old labels
-}
+    labels.exit().remove(); 
+    } 
+
+    var sortbarsAsc = function() {
+        // Sort the dataset in ascending order
+        dataset.sort(d3.ascending);
+    
+        // Redraw the bars with the sorted dataset
+        drawBars(dataset);
+    }
+
+    var sortbarsDesc = function() {
+        // Sort the dataset in descending order
+        dataset.sort(d3.descending);
+        
+        
+        // Redraw the bars with the sorted dataset
+        drawBars(dataset);
+    }
+    
+    
+
 
 // Draw the initial chart
 drawBars(dataset);
@@ -132,3 +152,6 @@ d3.select("#Removing").on("click", function() {
     dataset.shift();  // Remove the first value from the dataset
     drawBars(dataset);  // Redraw chart with updated data
 });
+d3.select("#SortingAsc").on("click", sortbarsAsc);
+d3.select("#SortingDesc").on("click", sortbarsDesc);
+    
