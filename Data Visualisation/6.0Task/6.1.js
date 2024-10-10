@@ -47,7 +47,7 @@ function drawBars(data) {
                 .attr("fill", "orange");
 
             var xPosition = parseFloat(d3.select(this).attr("x")) + xscale.bandwidth() /2;//x and y position of the text 
-            var yPosition = yscale(d) + 10; // Position above the bar 
+            var yPosition = yscale(d) + 20; // Position above the bar 
 
             // Remove any existing tooltip
             d3.select("#tooltip").remove();
