@@ -18,7 +18,7 @@ function init(){
                 .attr("height",h)
                 .attr("fill","steelblue");
 
-    d3.json("https://raw.githubusercontent.com/Yozzyyy/Data-visualisation/refs/heads/main/Data-visualisation\Data%20Visualisation/8.0Task/LGA_VIC.json").then(function(json){
+    d3.json("https://raw.githubusercontent.com/Yozzyyy/Data-visualisation/main/Data%20Visualisation/8.0Task/LGA_VIC.json").then(function(json){
 
         svg.selectAll("path")
             .data(json.features)
