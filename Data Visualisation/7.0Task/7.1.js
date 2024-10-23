@@ -4,7 +4,7 @@
         var padding = 40;
 
         var dataset;
-
+    
         // Load the CSV data
         d3.csv("Unemployment_78-95.csv", function(d) {
             return {
